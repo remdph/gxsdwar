@@ -6,12 +6,29 @@ Agrega objetos, librerias y recursos faltantes para hacer un deployment correcto
 
 ## Instalación
 
-`npm install gxsdwar -g`
+`npm install gxsdwar`
+
+## Configuración
+Antes de proceder con el re-ensamblado debe editar el archivo "conf.json" ubicado en la carpeta raiz del proyecto.
+
+### Estructura de conf.json
+```
+{
+  "warFile": "[pathToWar]", //path del archivo WAR generado con GeneXus
+  "appPath": "[pathToAppJava]", //path hacia la APP del deployment local hecho por genexus en tomcat (o equivalente)
+  "jdkPath": "[pathToJavaJDK]" //path a JDK de java
+}
+```
+
+### Ejemplo
+```
+{
+  "warFile": "./test.war",
+  "appPath": "/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/test",
+  "jdkPath": "/Program Files/Java/jdk1.7.0_75"
+}
+```
 
 ## Uso
 
-`gxsdwar [pathToWarFile] [pathToJavaWevApp]`
-
-## Ejemplo
-
-`gxsdwar gxfile.war "/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/test/"`
+`node gxsdwar`

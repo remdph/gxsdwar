@@ -1,8 +1,8 @@
 {
   "name": "gxsdwar",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Generar contenedor WAR para Servicios REST de Smart Devices generados con Genexus EVO2 y EVO3 para Java.",
-  "main": "index.js",
+  "main": "gxsdwar.js",
   "dependencies": {
     "adm-zip": "^0.4.7",
     "archiver": "^0.14.4",

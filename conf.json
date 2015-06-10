@@ -1,0 +1,5 @@
+{
+  "warFile": "./test.war",
+  "appPath": "/Program Files/Apache Software Foundation/Tomcat 7.0/webapps/test",
+  "jdkPath": "/Program Files/Java/jdk1.7.0_75"
+}
