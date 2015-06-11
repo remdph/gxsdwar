@@ -79,8 +79,10 @@ try{
               console.log("[COMPLETADO]".green);
               console.log("> Reconstruyendo Manifiesto WEB.INF...");
 
-              ncp(envPath+"/WEB-INF/web.xml","./temp/WEB-INF/web.xml",function(err){
-                
+              fs.unlinkSync("./tmp/WEB-INF/web.xml");
+
+              ncp(envPath+"/WEB-INF/web.xml","./tmp/WEB-INF/web.xml",function(err){
+
                 console.log("[COMPLETADO]".green);
                 console.log("> Crear nuevo contenedor WAR...");
 
