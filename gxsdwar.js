@@ -79,24 +79,25 @@ try{
               console.log("[COMPLETADO]".green);
               console.log("> Reconstruyendo Manifiesto WEB.INF...");
 
-              //WEB-INF
+              ncp(envPath+"/WEB-INF/web.xml","./temp/WEB-INF/web.xml",function(err){
+                
+                console.log("[COMPLETADO]".green);
+                console.log("> Crear nuevo contenedor WAR...");
 
-              console.log("[COMPLETADO]".green);
-              console.log("> Crear nuevo contenedor WAR...");
+                var exec = require('child_process').exec;
 
-              var exec = require('child_process').exec;
+                console.log("> Comprimiendo...");
 
-              console.log("> Comprimiendo...");
+                exec('build.bat '+warPathNew+' "'+jdkPath+'"', function(error, stdout, stderr) {
 
-              exec('build.bat '+warPathNew+' "'+jdkPath+'"', function(error, stdout, stderr) {
-
-                if (error !== null) {
-                  console.log("[ERROR] Ocurrio un problema generando WAR, detalle: ");
-                  console.log(error);
-                }else{
-                  console.log("[COMPLETADO]".green);
-                  console.log("[Proceso finalizado]".yellow);
-                }
+                  if (error !== null) {
+                    console.log("[ERROR] Ocurrio un problema generando WAR, detalle: ");
+                    console.log(error);
+                  }else{
+                    console.log("[COMPLETADO]".green);
+                    console.log("[Proceso finalizado]".yellow);
+                  }
+                });
               });
             });
           });
